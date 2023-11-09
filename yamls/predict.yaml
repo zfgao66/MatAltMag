@@ -1,0 +1,28 @@
+
+
+# super parameters
+batch_size: 512
+shuffle: false
+radius: 20
+sample_size: 10
+max_num_nbr: 12
+dmin: 0
+step: 0.2
+num_workers: 4
+
+log_batch_freq: 2
+drop_rate: 0
+
+# network architecture
+crystal_gnn_config:
+  atom_fea_len: 512
+  n_conv: 3
+head_output_dim: 2
+
+
+# data path
+experiment_name: '27'
+root_dir: 'data'
+processed_dir: 'processed_predict'
+ckpt_path: 'checkpoints/checkpoint-{}'
+output_file: 'out/predict-{}.csv'

@@ -1,0 +1,50 @@
+# random seed
+random_seed: 66
+
+# data precision
+precision: float32
+
+# super parameters
+epochs: 500
+batch_size: 2
+lr: 0.001
+lr_milestones: [100]
+weight_decay: 0
+momentum: 0.9
+num_workers: 8
+radius: 20
+ratio: 711
+sample_size: 10
+max_num_nbr: 12
+dmin: 0
+step: 0.2
+shuffle: true
+
+save_epoch_freq: 5
+log_epoch_freq: 2
+log_batch_freq: 5
+
+# network architecture
+crystal_gnn_config:
+  atom_fea_len: 512
+  n_conv: 3
+head_output_dim: 2
+drop_rate: 0.25
+
+# experiment name and path
+experiment_name: '0'
+comment: 'no comments'
+load_pretrain: true
+continuous_train: false
+pre_ckpt_path: 'checkpoints/pre_checkpoint-{}'
+ckpt_path: 'checkpoints/checkpoint-{}'
+
+# data path
+root_dir: 'data'
+processed_dir:
+  positive: 'processed_posi'
+  negative: 'processed_nega'
+figs_train: 'figs/train_{}.pdf'
+
+# log
+log_file: 'logs/out-{}.log'

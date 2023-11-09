@@ -1,0 +1,1 @@
+accelerate launch --config_file yamls/accelerate.yaml train.py --file yamls/train.yaml

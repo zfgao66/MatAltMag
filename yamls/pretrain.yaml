@@ -1,0 +1,48 @@
+# random seed
+random_seed: 66
+
+# data precision
+precision: float32
+
+# super parameters
+start_epoch: 1
+epochs: 10
+batch_size: 512
+lr: 0.001
+lr_milestones: [100]
+weight_decay: 0
+momentum: 0.9
+num_workers: 4
+radius: 20
+sample_size: 10
+max_num_nbr: 12
+dmin: 0
+step: 0.2
+shuffle: true
+
+save_epoch_freq: 1
+log_epoch_freq: 1
+log_batch_freq: 2
+
+# network architecture
+crystal_gnn_config:
+  atom_fea_len: 512
+  n_conv: 3
+head_output_dim: 2
+drop_rate: 0
+
+# experiment name and path
+experiment_name: '0'
+continuous_pretrain: false
+pre_ckpt_path: 'checkpoints/pre_checkpoint-{}'
+
+# data path
+root_dir: 'data'
+processed_dir:
+  candidate: 'processed_predict'
+  negative: 'processed_nega'
+figs_pretrain: 'figs/pretrain_{}.pdf'
+restore_loss: 'out/loss_{}.npy'
+
+# log
+log_file: 'logs/pre-out-{}.log'
