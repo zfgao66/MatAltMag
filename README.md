@@ -53,6 +53,6 @@ accelerate launch --config_file yamls/accelerate.yaml train.py --file yamls/trai
 ```
 6. check and update yamls/predict.yaml, then run `predict.py`
 ```shell
-python predict.py --file yamls/predict.py
+python predict.py --file yamls/predict.yaml
 ```
 You can also directly load our trained model without pre-training and training yourself. Our weights of classifier model can be download from [Google Drive](https://drive.google.com/drive/folders/1xYQrIfC71z-IlD33hkTdunTsUgMLb_hA?usp=drive_link).
