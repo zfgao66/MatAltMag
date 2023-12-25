@@ -1,0 +1,9 @@
+checkpoints/
+
+data/
+
+logs/
+
+.idea/
+
+yamls/accelerate.yaml
