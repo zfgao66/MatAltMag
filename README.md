@@ -2,14 +2,14 @@
 The pytorch implement of papar *AI-accelerated Discovery of Altermagnetic Materials*
 
 # Prerequisites
-package required:
-- pytorch
-- accelerate
-- pymatgen
-- PyYAML
-- tensorboard
-- tqdm
-- pandas
+some package required:
+- pytorch: 2.0.1
+- accelerate: 0.20.0
+- pymatgen: 2023.5.10
+- PyYAML: 6.0
+- tqdm: 4.64.0
+
+Other required packages are listed in the `requirements.txt` file.
 
 # Run
 1. run files in the `preprocess` directory, move the output files of `label0.csv` and `candidate.csv` to `root_dir` directory
@@ -56,4 +56,6 @@ accelerate launch --config_file yamls/accelerate.yaml train.py --file yamls/trai
 ```shell
 python predict.py --file yamls/predict.yaml
 ```
-You can also directly load our trained model without pre-training and training yourself. Our weights of classifier model can be download from [Google Drive](https://drive.google.com/drive/folders/1xYQrIfC71z-IlD33hkTdunTsUgMLb_hA?usp=drive_link).
+Downloading all `CIF` files of all crystals using the `download.py` script takes about 1 hour, depending on your network speed. Pretraining the auto-encoder model for 10 epochs with a batch size of 64 on 2 NVIDIA A100 GPUs takes over 2 days. Predicting the candidate datasets of over 42,000 samples takes about 10 seconds with a batch size of 512.
+
+You can also directly load our trained model, which has undergone multiple iterative training processes, without pre-training and training it yourself. The weights of our classifier model can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1Dbb3u-_LGZ8trq1w4o173GWeGjtksghx?usp=sharing). The corresponding output is presented in the `out/output.csv`.
